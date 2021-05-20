@@ -3,13 +3,13 @@ function convertFahrToCelsius(F) {
     var C = (F-32)*5/9
     var x = C.toFixed(4)
     if (Array.isArray(F)) {
-        return "[1,2,3] is not a valid number but a/an array"
+        return (`${JSON.stringify(F)} is not a valid number but a/an ${"Array"}`)
     } else if (typeof F === 'object') {
-        return "{temp:0} is not a valid number but a/an object"
+        return (`${JSON.stringify(F)} is not a valid number but a/an ${"object"}`)
     } else if (typeof F === 'boolean') {
-        return "true is not a valid number but a/an boolean"
+        return `${F} is not a valid number but a/an ${"boolean"}`
     } else if (typeof F === 'string' && isNaN(F))  {
-        return "is not a valid number but a/an string"
+        return (`${JSON.stringify(F)} is not a valid number but a/an ${"String"}`)
     } else {
         return x
         
